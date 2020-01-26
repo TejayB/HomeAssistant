@@ -1,4 +1,7 @@
 *.db
 *.log
-/.HA_VERSION
+
 tts/
+
+secrets.yaml
+.HA_VERSION
