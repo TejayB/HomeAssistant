@@ -2,6 +2,7 @@
 *.log
 
 tts/
+node-red/
 
 secrets.yaml
 .HA_VERSION
