@@ -2,9 +2,10 @@
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
-# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-# http:
-#   base_url: example.duckdns.org:8123
+http:
+  base_url: https://home.beckedorf.me:8123
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_private_key
 
 # Text to speech
 tts:
@@ -16,17 +17,10 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 zone: !include zones.yaml
 homekit: !include homekit.yaml 
-mqtt:
-    discovery: true
-    broker: 10.0.0.16
-    username: Mosquitto
-    password: a]43]/yDvMH7[JM(VT/3
-    birth_message:
-        topic: 'hass/status'
-        payload: 'online'
-    will_message:
-        topic: 'hass/status'
-        payload: 'offline'
+mqtt: !include mqtt.yaml
+spotify: !include spotify.yaml
+sensor: !include sensor.yaml
+
     
 input_boolean:
   zigbee_permit_join:
@@ -39,51 +33,3 @@ timer:
     name: Time remaining
     duration: 600 # Updated this to the number of seconds you wish
 
-sensor:
-  - platform: systemmonitor
-    resources:
-      - type: disk_free
-        arg: /
-      - type: memory_free
-      - type: memory_use_percent
-      - type: processor_use
-      - type: last_boot
-      - type: network_in
-        arg: eth0
-      - type: network_out
-        arg: eth0
-      - type: ipv4_address
-        arg: eth0
-
-  - platform: mqtt
-    name: Bridge state
-    state_topic: "zigbee2mqtt/bridge/state"
-    icon: mdi:router-wireless
-    
-  - platform: mqtt
-    state_topic: "zigbee2mqtt/<FRIENDLY_NAME>"
-    availability_topic: "zigbee2mqtt/bridge/state"
-    unit_of_measurement: "°C"
-    device_class: "temperature"
-    value_template: "{{ value_json.temperature }}"
-    
-  - platform: mqtt
-    state_topic: "zigbee2mqtt/<FRIENDLY_NAME>"
-    availability_topic: "zigbee2mqtt/bridge/state"
-    unit_of_measurement: "%"
-    device_class: "humidity"
-    value_template: "{{ value_json.humidity }}"
-
-  - platform: mqtt
-    state_topic: "zigbee2mqtt/<FRIENDLY_NAME>"
-    availability_topic: "zigbee2mqtt/bridge/state"
-    unit_of_measurement: "%"
-    device_class: "battery"
-    value_template: "{{ value_json.battery }}"
-
-  - platform: mqtt
-    state_topic: "zigbee2mqtt/<FRIENDLY_NAME>"
-    availability_topic: "zigbee2mqtt/bridge/state"
-    icon: "mdi:signal"
-    unit_of_measurement: "lqi"
-    value_template: "{{ value_json.linkquality }}"

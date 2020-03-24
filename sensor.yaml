@@ -1,0 +1,48 @@
+- platform: systemmonitor
+  resources:
+  - type: disk_free
+    arg: /
+  - type: memory_free
+  - type: memory_use_percent
+  - type: processor_use
+  - type: last_boot
+  - type: network_in
+    arg: eth0
+  - type: network_out
+    arg: eth0
+  - type: ipv4_address
+    arg: eth0
+        
+- platform: mqtt
+  name: Bridge state
+  state_topic: "zigbee2mqtt/bridge/state"
+  icon: mdi:router-wireless
+    
+- platform: mqtt
+  state_topic: "zigbee2mqtt/<FRIENDLY_NAME>"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  unit_of_measurement: "°C"
+  device_class: "temperature"
+  value_template: "{{ value_json.temperature }}"
+        
+- platform: mqtt
+  state_topic: "zigbee2mqtt/<FRIENDLY_NAME>"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  unit_of_measurement: "%"
+  device_class: "humidity"
+  value_template: "{{ value_json.humidity }}"
+    
+- platform: mqtt
+  state_topic: "zigbee2mqtt/<FRIENDLY_NAME>"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  unit_of_measurement: "%"
+  device_class: "battery"
+  value_template: "{{ value_json.battery }}"
+    
+- platform: mqtt
+  state_topic: "zigbee2mqtt/<FRIENDLY_NAME>"
+  availability_topic: "zigbee2mqtt/bridge/state"
+  icon: "mdi:signal"
+  unit_of_measurement: "lqi"
+  value_template: "{{ value_json.linkquality }}"
+    
