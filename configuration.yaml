@@ -33,3 +33,5 @@ timer:
     name: Time remaining
     duration: 600 # Updated this to the number of seconds you wish
 
+frontend:
+  themes: !include themes.yaml
