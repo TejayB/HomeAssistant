@@ -1,8 +1,8 @@
-Light - Navy Blue:
+Dark - Navy Blue:
   ### Main Interface Colors ###
   primary-color: "#395274"
   light-primary-color: "#5F81B0"
-  primary-background-color: "#F6F7F9"
+  primary-background-color: "#EFF2F6"
   secondary-background-color: var(--primary-background-color)
   divider-color: "#D6DFEB"
   ### Text ###
@@ -27,11 +27,11 @@ Light - Navy Blue:
   paper-slider-active-color: var(--paper-slider-knob-color)
   paper-slider-secondary-color: var(--light-primary-color)
   ### Labels ###
-  label-badge-background-color: "#FFFFFF"
+  label-badge-background-color: "#EFF2F6"
   label-badge-text-color: "#395274"
   label-badge-red: "#FF8888"
   ### Cards ###
-  paper-card-background-color: "#FFFFFF"
+  paper-card-background-color: "#EFF2F6"
   paper-listbox-background-color: var(--primary-background-color)
   ### Toggles ###
   paper-toggle-button-checked-button-color: "#FF6262"
