@@ -11,7 +11,7 @@ http:
 tts:
   - platform: google_translate
 
-group: !include groups.yaml
+light: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
@@ -21,17 +21,7 @@ mqtt: !include mqtt.yaml
 spotify: !include spotify.yaml
 sensor: !include sensor.yaml
 
-    
-input_boolean:
-  zigbee_permit_join:
-    name: Allow devices to join
-    initial: off
-    icon: mdi:cellphone-wireless
-
-timer:
-  zigbee_permit_join:
-    name: Time remaining
-    duration: 600 # Updated this to the number of seconds you wish
-
 frontend:
   themes: !include themes.yaml
+  
+ 

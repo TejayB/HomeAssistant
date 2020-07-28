@@ -1,3 +1,7 @@
   filter:
       include_domains:
         - light
+      exclude_entities:
+        - light.office
+        - light.livingroom
+        - light.kitchen
