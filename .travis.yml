@@ -7,4 +7,6 @@ before_install:
 install:
   - pip3 install homeassistant
 script:
+  - touch fullchain.pem
+  - touch privkey.pem
   - hass -c . --script check_config
