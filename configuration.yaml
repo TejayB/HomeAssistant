@@ -1,7 +1,7 @@
+homeassistant:
+  packages: !include_dir_named packages
+
 default_config:
-
-packages: !include_dir_named packages
-
 http:
   base_url: https://home.beckedorf.me:8123
   ssl_certificate: !secret ssl_certificate
