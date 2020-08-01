@@ -3,7 +3,6 @@ telegram_bot:
   api_key: !secret telegram_home_api
   allowed_chat_ids:
     - !secret telegram_chat_id
-    - !secret telegram_group_chat_id
 
 notify:
   - name: telegram_tejay
