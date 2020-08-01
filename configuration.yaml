@@ -24,4 +24,6 @@ sensor: !include sensor.yaml
 frontend:
   themes: !include themes.yaml
   
- 
+timer:
+  aeration:
+    duration: '00:15:00'
