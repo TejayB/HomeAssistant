@@ -1,29 +1,18 @@
-
-# Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
+
+packages: !include_dir_named packages
 
 http:
   base_url: https://home.beckedorf.me:8123
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_private_key
 
-# Text to speech
-tts:
-  - platform: google_translate
-
-light: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 zone: !include zones.yaml
-homekit: !include homekit.yaml 
-mqtt: !include mqtt.yaml
 spotify: !include spotify.yaml
 sensor: !include sensor.yaml
 
 frontend:
   themes: !include themes.yaml
-  
-timer:
-  aeration:
-    duration: '00:15:00'
