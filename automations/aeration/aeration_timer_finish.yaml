@@ -1,0 +1,12 @@
+# Notify when timer finished
+- alias: AerationTimerFinished
+  id: 'AerationTimerFinished'
+  trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+        entity_id: timer.aeration
+  action:
+  - service: notify.telegram_tejay
+    data:
+      message: 'Lüften fertig'

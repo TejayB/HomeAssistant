@@ -1,0 +1,12 @@
+
+# Stopping and resetting of the aeration timer      
+- alias: AerationTimerStop
+  id: 'AerationTimerStop'
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.door_livingroom_right_contact
+    to: 'off'
+  action:
+  - service: timer.cancel
+    entity_id: timer.aeration
+  
