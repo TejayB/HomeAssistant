@@ -12,6 +12,6 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 zone: !include zones.yaml
 sensor: !include sensor.yaml
-
+automation: !include_dir_list automations
 frontend:
   themes: !include themes.yaml
