@@ -7,7 +7,7 @@ http:
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_private_key
 
-automation: !include_dir_list automations
+automation split: !include_dir_list automations
 script: !include scripts.yaml
 scene: !include scenes.yaml
 zone: !include zones.yaml
