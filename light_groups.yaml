@@ -1,15 +1,15 @@
-light:
-  - platform: group
-    name: office
-    entities:
-      - light.schreibtisch
-      - light.bettlampe
-  - platform: group
-    name: kitchen
-    entities:
-      - light.arbeitsplatte
-  - platform: group
-    name: livingroom
-    entities:
-      - light.ecklampe
-      - light.tischlampe
+
+- platform: group
+  name: office
+  entities:
+    - light.schreibtisch
+    - light.bettlampe
+- platform: group
+  name: kitchen
+  entities:
+    - light.arbeitsplatte
+- platform: group
+  name: livingroom
+  entities:
+    - light.ecklampe
+    - light.tischlampe

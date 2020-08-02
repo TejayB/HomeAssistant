@@ -12,7 +12,7 @@ script: !include scripts.yaml
 scene: !include scenes.yaml
 zone: !include zones.yaml
 sensor: !include sensor.yaml
-
+light: !include light_groups.yaml
 frontend:
   themes: !include themes.yaml
   
