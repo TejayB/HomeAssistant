@@ -1,0 +1,11 @@
+---
+# Send notification when starting
+alias: StartupNotification
+id: 'StartupNotification'
+trigger:
+  platform: homeassistant
+  event: start
+action:
+  - service: notify.telegram_tejay
+    data:
+      message: Home Assistant successfully started 👏
