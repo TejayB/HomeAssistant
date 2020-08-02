@@ -2,6 +2,7 @@
 # Starting of the aeration timer
 alias: AerationTimerTimerStart
 id: 'AerationTimerTimerStart'
+mode: single
 trigger:
 - platform: state
   entity_id: binary_sensor.door_livingroom_right_contact

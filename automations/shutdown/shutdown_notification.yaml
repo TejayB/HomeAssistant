@@ -2,6 +2,7 @@
 # Send notification when shutdown
 alias: ShutdownNotification
 id: 'ShutdownNotification'
+mode: single
 trigger:
   platform: homeassistant
   event: shutdown

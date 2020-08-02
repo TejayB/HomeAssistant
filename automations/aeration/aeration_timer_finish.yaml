@@ -2,6 +2,7 @@
 # Notify when timer finished
 alias: AerationTimerFinished
 id: 'AerationTimerFinished'
+mode: single
 trigger:
 - platform: event
   event_type: timer.finished
