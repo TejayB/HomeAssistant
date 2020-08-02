@@ -1,0 +1,11 @@
+---
+# Purge my recorder database every hour, to keep things nice and tight.
+description: Purge recorder database
+alias: system_recorder_purge
+id: 'system_recorder_purge'
+mode: single
+trigger:
+  platform: time_pattern
+  minutes: 12
+action:
+  service: recorder.purge
