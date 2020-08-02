@@ -1,3 +1,4 @@
+---
 # Starting of the aeration timer
 - alias: AerationTimerTimerStart
   id: 'AerationTimerTimerStart'

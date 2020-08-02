@@ -1,3 +1,4 @@
+---
 # Notify when timer finished
 - alias: AerationTimerFinished
   id: 'AerationTimerFinished'
