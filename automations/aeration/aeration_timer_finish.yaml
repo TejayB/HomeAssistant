@@ -11,4 +11,4 @@ trigger:
 action:
 - service: notify.telegram_tejay
   data:
-    message: 'Lüften fertig'
+    message: "Es sind 15 min um und jetzt sind es im Wohnzimmer {{states('sensor.air_livingroom_humidity')}}% und im Badezimmer {{states('sensor.air_bathroom_humidity')}}%"
