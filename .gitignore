@@ -4,6 +4,8 @@
 .storage/
 tts/
 node-red/
+www/**/
+custom_components/*
 
 secrets.yaml
 .HA_VERSION
