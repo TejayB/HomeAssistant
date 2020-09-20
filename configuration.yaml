@@ -1,9 +1,11 @@
 homeassistant:
+  external_url: https://home.beckedorf.me:8123"
+  internal_url: "https://home.beckedorf.me:8123"
   packages: !include_dir_named packages
+
 
 default_config:
 http:
-  base_url: https://home.beckedorf.me:8123
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_private_key
 
