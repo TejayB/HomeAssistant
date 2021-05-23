@@ -18,3 +18,62 @@ finish_timer:
   sequence:
     - service: timer.finish
       entity_id: timer.aeration
+goto_trashcan: 
+  alias: Going to be emptied
+  sequence:
+    - data:
+        entity_id: vacuum.rockrobo
+        command: go_to
+        params:
+          spot_id: trash
+      service: vacuum.send_command
+clean_all_zones: 
+  alias: "Clean living area"
+  sequence: 
+    - data: 
+        command: zoned_cleanup
+        entity_id: vacuum.rockrobo
+        params: 
+          zone_ids: 
+            - Wohnung
+      service: vacuum.send_command
+clean_kitchen: 
+  alias: "Clean kitchen area"
+  sequence: 
+    - data: 
+        command: zoned_cleanup
+        entity_id: vacuum.rockrobo
+        params: 
+          zone_ids: 
+            - "Küche"
+      service: vacuum.send_command
+clean_living_room: 
+  alias: "Clean living room area"
+  sequence: 
+    - data: 
+        command: zoned_cleanup
+        entity_id: vacuum.rockrobo
+        params: 
+          zone_ids: 
+            - Wohnzimmer
+      service: vacuum.send_command
+clean_bathroom: 
+  alias: "Clean bathroom area"
+  sequence: 
+    - data: 
+        command: zoned_cleanup
+        entity_id: vacuum.rockrobo
+        params: 
+          zone_ids: 
+            - Bad
+      service: vacuum.send_command
+clean_bedroom: 
+  alias: "Clean bedroom area"
+  sequence: 
+    - data: 
+        command: zoned_cleanup
+        entity_id: vacuum.rockrobo
+        params: 
+          zone_ids: 
+            - Schlafzimmer
+      service: vacuum.send_command
