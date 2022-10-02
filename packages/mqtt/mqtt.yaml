@@ -10,3 +10,27 @@ mqtt:
   will_message:
       topic: 'hass/status'
       payload: 'offline'
+  sensor:
+    - name: Bridge state
+      state_topic: "zigbee2mqtt/bridge/state"
+      icon: mdi:router-wireless
+    - state_topic: "zigbee2mqtt/<FRIENDLY_NAME>"
+      availability_topic: "zigbee2mqtt/bridge/state"
+      unit_of_measurement: "°C"
+      device_class: "temperature"
+      value_template: "{{ value_json.temperature }}"
+    - state_topic: "zigbee2mqtt/<FRIENDLY_NAME>"
+      availability_topic: "zigbee2mqtt/bridge/state"
+      unit_of_measurement: "%"
+      device_class: "humidity"
+      value_template: "{{ value_json.humidity }}"
+    - state_topic: "zigbee2mqtt/<FRIENDLY_NAME>"
+      availability_topic: "zigbee2mqtt/bridge/state"
+      unit_of_measurement: "%"
+      device_class: "battery"
+      value_template: "{{ value_json.battery }}"
+    - state_topic: "zigbee2mqtt/<FRIENDLY_NAME>"
+      availability_topic: "zigbee2mqtt/bridge/state"
+      icon: "mdi:signal"
+      unit_of_measurement: "lqi"
+      value_template: "{{ value_json.linkquality }}"

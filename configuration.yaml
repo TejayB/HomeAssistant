@@ -3,7 +3,6 @@ homeassistant:
   internal_url: "https://home.beckedorf.me:8123"
   packages: !include_dir_named packages
 
-default_config:
 http:
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_private_key
@@ -30,3 +29,6 @@ recorder:
     - scene
   # Disable auto purging, I'm doing this using automations instead
   auto_purge: false
+  
+default_config:
+history:
