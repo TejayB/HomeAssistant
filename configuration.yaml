@@ -30,5 +30,3 @@ recorder:
   # Disable auto purging, I'm doing this using automations instead
   auto_purge: false
   
-default_config:
-history:
