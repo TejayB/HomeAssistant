@@ -1,15 +1,4 @@
 mqtt:
-  discovery: true
-  discovery_prefix: homeassistant
-  broker: 10.0.0.26
-  username: !secret mqtt_username
-  password: !secret mqtt_password
-  birth_message:
-      topic: 'hass/status'
-      payload: 'online'
-  will_message:
-      topic: 'hass/status'
-      payload: 'offline'
   sensor:
     - name: Bridge state
       state_topic: "zigbee2mqtt/bridge/state"
