@@ -1,3 +1,5 @@
 timer:
   aeration:
+    name: 'Zeit zum Lüften'
     duration: '00:15:00'
+    icon: 'mdi:fan-clock'
